@@ -1,0 +1,218 @@
+{
+  "full-stack-ai": {
+    "description": "Complete stack for AI-powered applications",
+    "skills": [
+      "ai-ml-development/rag-builder",
+      "ai-ml-development/llm-optimizer",
+      "ai-ml-development/vector-db-manager",
+      "frameworks/fastapi-builder",
+      "frameworks/react-component",
+      "devops-infrastructure/docker-composer",
+      "backend-api/api-designer"
+    ]
+  },
+  "production-ml": {
+    "description": "Production-ready ML pipeline setup",
+    "skills": [
+      "ai-ml-development/llm-optimizer",
+      "ai-ml-development/mlops-pipeline",
+      "ai-ml-development/model-trainer",
+      "code-quality/test-generator",
+      "devops-infrastructure/monitoring-setup",
+      "devops-infrastructure/ci-cd-builder",
+      "code-quality/security-auditor"
+    ]
+  },
+  "rapid-poc": {
+    "description": "Quick prototype development",
+    "skills": [
+      "frameworks/fastapi-builder",
+      "frameworks/react-component",
+      "code-quality/code-refactor",
+      "version-control/git-automation",
+      "backend-api/api-documenter"
+    ]
+  },
+  "business-pitch": {
+    "description": "Business communication and content creation",
+    "skills": [
+      "business-communication/pitch-coach",
+      "business-communication/linkedin-post-formatter",
+      "business-communication/newsletter",
+      "business-communication/decision-journal",
+      "business-communication/goal-translator"
+    ]
+  },
+  "backend-development": {
+    "description": "Complete backend API development",
+    "skills": [
+      "backend-api/api-designer",
+      "backend-api/database-schema",
+      "backend-api/sql-optimizer",
+      "frameworks/fastapi-builder",
+      "code-quality/test-generator",
+      "code-quality/security-auditor"
+    ]
+  },
+  "frontend-development": {
+    "description": "Modern frontend development",
+    "skills": [
+      "frameworks/react-component",
+      "frameworks/ui-builder",
+      "frameworks/typescript-helper",
+      "frameworks/frontend-optimizer",
+      "code-quality/test-generator"
+    ]
+  },
+  "devops-complete": {
+    "description": "Full DevOps pipeline setup",
+    "skills": [
+      "devops-infrastructure/docker-composer",
+      "devops-infrastructure/ci-cd-builder",
+      "devops-infrastructure/cloud-architect",
+      "devops-infrastructure/terraform-generator",
+      "devops-infrastructure/kubernetes-helper",
+      "devops-infrastructure/monitoring-setup"
+    ]
+  },
+  "data-pipeline": {
+    "description": "Data engineering and analytics",
+    "skills": [
+      "data-engineering/data-pipeline",
+      "data-engineering/data-validator",
+      "data-engineering/etl-optimizer",
+      "data-engineering/analytics-builder",
+      "data-engineering/pandas-expert",
+      "community/scientific-skills/scientific-skills/dask",
+      "community/scientific-skills/scientific-skills/exploratory-data-analysis"
+    ]
+  },
+  "code-quality": {
+    "description": "Code review and quality assurance",
+    "skills": [
+      "code-quality/code-reviewer",
+      "code-quality/code-refactor",
+      "code-quality/test-generator",
+      "code-quality/security-auditor",
+      "code-quality/performance-profiler",
+      "obra-superpowers/skills/systematic-debugging",
+      "obra-superpowers/skills/test-driven-development"
+    ]
+  },
+  "content-creation": {
+    "description": "Content writing and social media",
+    "skills": [
+      "business-communication/linkedin-post",
+      "business-communication/linkedin-post-formatter",
+      "business-communication/newsletter",
+      "business-communication/medium-post",
+      "business-communication/video-script"
+    ]
+  },
+  "microservices": {
+    "description": "Microservices architecture and deployment",
+    "skills": [
+      "backend-api/microservices-architect",
+      "backend-api/api-designer",
+      "devops-infrastructure/docker-composer",
+      "devops-infrastructure/kubernetes-helper",
+      "devops-infrastructure/monitoring-setup"
+    ]
+  },
+  "chatbot-development": {
+    "description": "AI chatbot and agent development",
+    "skills": [
+      "ai-ml-development/chatbot-creator",
+      "ai-ml-development/agent-designer",
+      "ai-ml-development/prompt-engineer",
+      "ai-ml-development/rag-builder"
+    ]
+  },
+  "superpowers-development": {
+    "description": "Advanced development workflow with superpowers",
+    "skills": [
+      "obra-superpowers/skills/systematic-debugging",
+      "obra-superpowers/skills/test-driven-development",
+      "obra-superpowers/skills/brainstorming",
+      "obra-superpowers/skills/writing-plans",
+      "obra-superpowers/skills/executing-plans",
+      "obra-superpowers/skills/subagent-driven-development",
+      "obra-superpowers/skills/verification-before-completion"
+    ]
+  },
+  "code-review-workflow": {
+    "description": "Complete code review and collaboration",
+    "skills": [
+      "obra-superpowers/skills/requesting-code-review",
+      "obra-superpowers/skills/receiving-code-review",
+      "obra-superpowers/skills/finishing-a-development-branch",
+      "code-quality/code-reviewer",
+      "version-control/pr-reviewer"
+    ]
+  },
+  "scientific-research": {
+    "description": "Scientific computing and research",
+    "skills": [
+      "community/scientific-skills/scientific-skills/biopython",
+      "community/scientific-skills/scientific-skills/astropy",
+      "community/scientific-skills/scientific-skills/scipy",
+      "community/scientific-skills/scientific-skills/numpy",
+      "community/scientific-skills/scientific-skills/exploratory-data-analysis",
+      "community/scientific-skills/scientific-skills/hypothesis-generation"
+    ]
+  },
+  "bioinformatics": {
+    "description": "Bioinformatics and genomics analysis",
+    "skills": [
+      "community/scientific-skills/scientific-skills/biopython",
+      "community/scientific-skills/scientific-skills/alphafold-database",
+      "community/scientific-skills/scientific-skills/ensembl-database",
+      "community/scientific-skills/scientific-skills/gene-database",
+      "community/scientific-skills/scientific-skills/clinvar-database",
+      "community/scientific-skills/scientific-skills/esm"
+    ]
+  },
+  "web-automation": {
+    "description": "Web automation and testing",
+    "skills": [
+      "community/playwright-skill",
+      "anthropics-official/webapp-testing",
+      "community/ios-simulator-skill",
+      "code-quality/test-automation"
+    ]
+  },
+  "document-processing": {
+    "description": "Document creation and manipulation",
+    "skills": [
+      "anthropics-official/document-skills/docx",
+      "anthropics-official/document-skills/pdf",
+      "anthropics-official/document-skills/pptx",
+      "anthropics-official/document-skills/xlsx"
+    ]
+  },
+  "creative-design": {
+    "description": "Creative and visual design",
+    "skills": [
+      "anthropics-official/algorithmic-art",
+      "anthropics-official/canvas-design",
+      "anthropics-official/slack-gif-creator",
+      "community/d3js-visualization",
+      "community/web-asset-generator"
+    ]
+  },
+  "mcp-development": {
+    "description": "MCP server development",
+    "skills": [
+      "anthropics-official/mcp-builder",
+      "anthropics-official/skill-creator"
+    ]
+  },
+  "security-testing": {
+    "description": "Security testing and penetration testing",
+    "skills": [
+      "community/ffuf-web-fuzzing",
+      "code-quality/security-auditor",
+      "obra-superpowers/skills/defense-in-depth"
+    ]
+  }
+}
