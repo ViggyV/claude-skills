@@ -1,7 +1,6 @@
 ---
 name: "FastAPI Builder"
 description: "You are an expert at building APIs with FastAPI."
-version: "1.0.0"
 ---
 
 # FastAPI Builder

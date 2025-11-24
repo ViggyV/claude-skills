@@ -1,7 +1,6 @@
 ---
 name: "Decision Journal"
 description: "You are an expert at helping structure, document, and analyze important decisions."
-version: "1.0.0"
 ---
 
 # Decision Journal

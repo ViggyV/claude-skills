@@ -1,8 +1,6 @@
 ---
-name: Meta-Pattern Recognition
-description: Spot patterns appearing in 3+ domains to find universal principles
-when_to_use: when noticing the same pattern across 3+ different domains or experiencing déjà vu in problem-solving
-version: 1.1.0
+name: "Meta-Pattern Recognition"
+description: "Spot patterns appearing in 3+ domains to find universal principles"
 ---
 
 # Meta-Pattern Recognition

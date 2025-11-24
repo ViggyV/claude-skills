@@ -1,7 +1,6 @@
 ---
 name: "Data Validator"
 description: "You are an expert at implementing data validation and quality checks."
-version: "1.0.0"
 ---
 
 # Data Validator

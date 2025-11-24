@@ -1,5 +1,5 @@
 ---
-name: hypothesis-generation
+name: "hypothesis-generation"
 description: "Generate testable hypotheses. Formulate from observations, design experiments, explore competing explanations, develop predictions, propose mechanisms, for scientific inquiry across domains."
 ---
 

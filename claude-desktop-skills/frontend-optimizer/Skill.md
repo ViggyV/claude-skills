@@ -1,7 +1,6 @@
 ---
 name: "Frontend Optimizer"
 description: "You are an expert at optimizing frontend performance."
-version: "1.0.0"
 ---
 
 # Frontend Optimizer

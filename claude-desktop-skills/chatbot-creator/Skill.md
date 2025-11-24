@@ -1,7 +1,6 @@
 ---
 name: "Chatbot Creator"
 description: "You are an expert at building conversational AI chatbots for various use cases."
-version: "1.0.0"
 ---
 
 # Chatbot Creator

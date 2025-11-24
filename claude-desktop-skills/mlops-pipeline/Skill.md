@@ -1,7 +1,6 @@
 ---
 name: "MLOps Pipeline"
 description: "You are an expert at building production ML pipelines with proper MLOps practices."
-version: "1.0.0"
 ---
 
 # MLOps Pipeline

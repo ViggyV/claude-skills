@@ -1,7 +1,6 @@
 ---
 name: "Flask Optimizer"
 description: "You are an expert at building and optimizing Flask applications."
-version: "1.0.0"
 ---
 
 # Flask Optimizer

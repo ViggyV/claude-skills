@@ -1,5 +1,5 @@
 ---
-name: diffdock
+name: "diffdock"
 description: "Diffusion-based molecular docking. Predict protein-ligand binding poses from PDB/SMILES, confidence scores, virtual screening, for structure-based drug design. Not for affinity prediction."
 ---
 

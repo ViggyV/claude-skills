@@ -1,7 +1,6 @@
 ---
 name: "Data Pipeline"
 description: "You are an expert at building robust data pipelines and ETL processes."
-version: "1.0.0"
 ---
 
 # Data Pipeline

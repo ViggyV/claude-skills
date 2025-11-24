@@ -1,7 +1,6 @@
 ---
 name: "SQL Optimizer"
 description: "You are an expert at optimizing SQL queries for performance and efficiency."
-version: "1.0.0"
 ---
 
 # SQL Optimizer

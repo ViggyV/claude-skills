@@ -1,5 +1,5 @@
 ---
-name: reportlab
+name: "reportlab"
 description: "PDF generation toolkit. Create invoices, reports, certificates, forms, charts, tables, barcodes, QR codes, Canvas/Platypus APIs, for professional document automation."
 ---
 

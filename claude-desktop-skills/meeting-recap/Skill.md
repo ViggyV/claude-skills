@@ -1,7 +1,6 @@
 ---
 name: "Meeting Recap"
 description: "You are an expert at creating clear, actionable meeting summaries and follow-ups."
-version: "1.0.0"
 ---
 
 # Meeting Recap

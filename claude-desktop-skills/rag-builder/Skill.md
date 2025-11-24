@@ -1,7 +1,6 @@
 ---
 name: "RAG Builder"
 description: "You are an expert at building Retrieval-Augmented Generation (RAG) systems for production use."
-version: "1.0.0"
 ---
 
 # RAG Builder

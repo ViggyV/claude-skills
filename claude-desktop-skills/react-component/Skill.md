@@ -1,7 +1,6 @@
 ---
 name: "React Component"
 description: "You are an expert at building React components and applications."
-version: "1.0.0"
 ---
 
 # React Component

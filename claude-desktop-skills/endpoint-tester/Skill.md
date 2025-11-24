@@ -1,7 +1,6 @@
 ---
 name: "Endpoint Tester"
 description: "You are an expert at testing API endpoints thoroughly and systematically."
-version: "1.0.0"
 ---
 
 # Endpoint Tester

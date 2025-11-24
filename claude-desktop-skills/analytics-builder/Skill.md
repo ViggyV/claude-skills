@@ -1,7 +1,6 @@
 ---
 name: "Analytics Builder"
 description: "You are an expert at building analytics solutions and business intelligence systems."
-version: "1.0.0"
 ---
 
 # Analytics Builder

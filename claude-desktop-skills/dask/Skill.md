@@ -1,5 +1,5 @@
 ---
-name: dask
+name: "dask"
 description: "Parallel/distributed computing. Scale pandas/NumPy beyond memory, parallel DataFrames/Arrays, multi-file processing, task graphs, for larger-than-RAM datasets and parallel workflows."
 ---
 

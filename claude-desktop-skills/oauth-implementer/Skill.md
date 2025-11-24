@@ -1,7 +1,6 @@
 ---
 name: "OAuth Implementer"
 description: "You are an expert at implementing OAuth 2.0 and authentication systems."
-version: "1.0.0"
 ---
 
 # OAuth Implementer

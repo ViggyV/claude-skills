@@ -1,5 +1,5 @@
 ---
-name: cobrapy
+name: "cobrapy"
 description: "Constraint-based metabolic modeling (COBRA). FBA, FVA, gene knockouts, flux sampling, SBML models, for systems biology and metabolic engineering analysis."
 ---
 

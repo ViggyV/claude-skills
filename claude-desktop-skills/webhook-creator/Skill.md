@@ -1,7 +1,6 @@
 ---
 name: "Webhook Creator"
 description: "You are an expert at designing and implementing webhook systems."
-version: "1.0.0"
 ---
 
 # Webhook Creator

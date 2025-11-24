@@ -1,7 +1,6 @@
 ---
 name: "Pytest Generator"
 description: "You are an expert at writing tests with pytest."
-version: "1.0.0"
 ---
 
 # Pytest Generator

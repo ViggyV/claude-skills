@@ -1,7 +1,6 @@
 ---
 name: "Video Script Writer"
 description: "You are an expert at creating engaging video scripts for various platforms and formats."
-version: "1.0.0"
 ---
 
 # Video Script Writer

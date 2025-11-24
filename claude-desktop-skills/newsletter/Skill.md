@@ -1,7 +1,6 @@
 ---
 name: "Newsletter Creator"
 description: "You are an expert newsletter writer helping create engaging, valuable email content."
-version: "1.0.0"
 ---
 
 # Newsletter Creator

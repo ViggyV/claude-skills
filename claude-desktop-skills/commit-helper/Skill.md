@@ -1,7 +1,6 @@
 ---
 name: "Commit Helper"
 description: "You are an expert at writing clear, meaningful Git commit messages."
-version: "1.0.0"
 ---
 
 # Commit Helper

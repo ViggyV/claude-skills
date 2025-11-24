@@ -1,7 +1,6 @@
 ---
 name: "Agent Designer"
 description: "You are an expert at designing and building AI agents with tool use and autonomous capabilities."
-version: "1.0.0"
 ---
 
 # Agent Designer

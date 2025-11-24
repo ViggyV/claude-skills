@@ -1,7 +1,6 @@
 ---
 name: "Vector DB Manager"
 description: "You are an expert at managing vector databases for AI/ML applications."
-version: "1.0.0"
 ---
 
 # Vector DB Manager

@@ -1,7 +1,6 @@
 ---
 name: "CI/CD Builder"
 description: "You are an expert at building CI/CD pipelines for automated testing and deployment."
-version: "1.0.0"
 ---
 
 # CI/CD Builder

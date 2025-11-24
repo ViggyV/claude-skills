@@ -1,5 +1,5 @@
 ---
-name: pytdc
+name: "pytdc"
 description: "Therapeutics Data Commons. AI-ready drug discovery datasets (ADME, toxicity, DTI), benchmarks, scaffold splits, molecular oracles, for therapeutic ML and pharmacological prediction."
 ---
 

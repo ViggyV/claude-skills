@@ -1,7 +1,6 @@
 ---
 name: "Branch Strategist"
 description: "You are an expert at Git branching strategies and workflows."
-version: "1.0.0"
 ---
 
 # Branch Strategist

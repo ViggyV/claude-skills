@@ -1,5 +1,5 @@
 ---
-name: pymc-bayesian-modeling
+name: "pymc-bayesian-modeling"
 description: "Bayesian modeling with PyMC. Build hierarchical models, MCMC (NUTS), variational inference, LOO/WAIC comparison, posterior checks, for probabilistic programming and inference."
 ---
 

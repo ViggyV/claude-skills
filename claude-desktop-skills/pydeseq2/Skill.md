@@ -1,5 +1,5 @@
 ---
-name: pydeseq2
+name: "pydeseq2"
 description: "Differential gene expression analysis (Python DESeq2). Identify DE genes from bulk RNA-seq counts, Wald tests, FDR correction, volcano/MA plots, for RNA-seq analysis."
 ---
 

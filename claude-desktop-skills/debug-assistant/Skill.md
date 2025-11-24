@@ -1,7 +1,6 @@
 ---
 name: "Debug Assistant"
 description: "You are an expert at systematic debugging and problem-solving for code issues."
-version: "1.0.0"
 ---
 
 # Debug Assistant

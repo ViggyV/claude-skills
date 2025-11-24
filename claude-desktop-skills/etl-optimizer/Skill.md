@@ -1,7 +1,6 @@
 ---
 name: "ETL Optimizer"
 description: "You are an expert at optimizing ETL/ELT pipelines for performance and efficiency."
-version: "1.0.0"
 ---
 
 # ETL Optimizer

@@ -1,7 +1,6 @@
 ---
 name: "Code Documenter"
 description: "You are an expert at writing clear, useful documentation for code."
-version: "1.0.0"
 ---
 
 # Code Documenter

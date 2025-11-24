@@ -1,7 +1,6 @@
 ---
 name: "Model Trainer"
 description: "You are an expert at training, fine-tuning, and evaluating machine learning models."
-version: "1.0.0"
 ---
 
 # Model Trainer

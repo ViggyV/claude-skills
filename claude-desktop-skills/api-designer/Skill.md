@@ -1,7 +1,6 @@
 ---
 name: "API Designer"
 description: "You are an expert at designing clean, scalable, and developer-friendly APIs."
-version: "1.0.0"
 ---
 
 # API Designer

@@ -2,7 +2,7 @@
 """
 Convert Claude Code skills to Claude Desktop format.
 Claude Desktop requires:
-- YAML frontmatter with name and description
+- YAML frontmatter with allowed keys only: name, description, license, allowed-tools, metadata
 - Directory structure: skill-name/Skill.md
 - Optional: resources/ folder
 """
@@ -14,6 +14,9 @@ from pathlib import Path
 
 SOURCE_DIR = Path("/Users/vigneshvasan/dev/claude-skils/.claude/skills")
 OUTPUT_DIR = Path("/Users/vigneshvasan/dev/claude-skils/claude-desktop-skills")
+
+# Allowed frontmatter keys per Claude Desktop spec
+ALLOWED_KEYS = {'name', 'description', 'license', 'allowed-tools', 'metadata'}
 
 def extract_title_and_description(content):
     """Extract title from first H1 and description from content."""
@@ -59,6 +62,33 @@ def extract_title_and_description(content):
 
     return title, description
 
+def clean_frontmatter(content):
+    """Remove any non-allowed keys from existing frontmatter."""
+    if not content.strip().startswith('---'):
+        return content, None, None
+
+    parts = content.split('---', 2)
+    if len(parts) < 3:
+        return content, None, None
+
+    frontmatter_lines = parts[1].strip().split('\n')
+    name = None
+    description = None
+
+    cleaned_lines = []
+    for line in frontmatter_lines:
+        if ':' in line:
+            key = line.split(':', 1)[0].strip()
+            if key in ALLOWED_KEYS:
+                cleaned_lines.append(line)
+                if key == 'name':
+                    name = line.split(':', 1)[1].strip().strip('"\'')
+                elif key == 'description':
+                    description = line.split(':', 1)[1].strip().strip('"\'')
+
+    body = parts[2]
+    return body, name, description
+
 def convert_skill(skill_path, output_base):
     """Convert a single skill to Claude Desktop format."""
     skill_name = skill_path.parent.name
@@ -67,31 +97,37 @@ def convert_skill(skill_path, output_base):
     with open(skill_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Check if already has frontmatter
-    if content.strip().startswith('---'):
-        # Already has frontmatter, just copy
-        new_content = content
-        # Extract name from frontmatter
-        name_match = re.search(r'^name:\s*["\']?(.+?)["\']?\s*$', content, re.MULTILINE)
-        if name_match:
-            skill_name = name_match.group(1).strip().lower().replace(' ', '-')
-    else:
-        # Extract title and description
-        title, description = extract_title_and_description(content)
+    # Clean any existing frontmatter and extract name/description
+    body, existing_name, existing_desc = clean_frontmatter(content)
 
-        # Truncate for limits
-        title = title[:64] if len(title) > 64 else title
-        description = description[:200] if len(description) > 200 else description
+    # If no frontmatter or content was stripped, use the original
+    if body is None:
+        body = content
 
-        # Create YAML frontmatter
-        frontmatter = f'''---
+    # Extract title and description from content if not in frontmatter
+    title, description = extract_title_and_description(body)
+
+    # Use existing values if available
+    if existing_name:
+        title = existing_name
+    if existing_desc:
+        description = existing_desc
+
+    # Truncate for limits
+    title = title[:64] if len(title) > 64 else title
+    description = description[:200] if len(description) > 200 else description
+
+    # Escape quotes in description
+    description = description.replace('"', '\\"')
+
+    # Create YAML frontmatter with only allowed keys
+    frontmatter = f'''---
 name: "{title}"
 description: "{description}"
-version: "1.0.0"
 ---
 
 '''
-        new_content = frontmatter + content
+    new_content = frontmatter + body.lstrip()
 
     # Create output directory
     output_skill_dir = output_base / skill_name

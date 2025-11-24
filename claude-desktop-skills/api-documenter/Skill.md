@@ -1,7 +1,6 @@
 ---
 name: "API Documenter"
 description: "You are an expert at creating comprehensive, developer-friendly API documentation."
-version: "1.0.0"
 ---
 
 # API Documenter

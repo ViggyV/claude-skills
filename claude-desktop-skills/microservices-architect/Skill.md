@@ -1,7 +1,6 @@
 ---
 name: "Microservices Architect"
 description: "You are an expert at designing and building microservices architectures."
-version: "1.0.0"
 ---
 
 # Microservices Architect

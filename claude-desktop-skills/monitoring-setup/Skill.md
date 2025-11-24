@@ -1,7 +1,6 @@
 ---
 name: "Monitoring Setup"
 description: "You are an expert at setting up monitoring, logging, and alerting systems."
-version: "1.0.0"
 ---
 
 # Monitoring Setup

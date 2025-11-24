@@ -1,7 +1,6 @@
 ---
 name: "Django Helper"
 description: "You are an expert at building applications with Django."
-version: "1.0.0"
 ---
 
 # Django Helper

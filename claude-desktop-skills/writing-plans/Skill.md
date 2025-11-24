@@ -1,8 +1,6 @@
 ---
-name: Writing Plans
-description: Create detailed implementation plans with bite-sized tasks for engineers with zero codebase context
-when_to_use: when design is complete and you need detailed implementation tasks for engineers with zero codebase context
-version: 2.1.0
+name: "Writing Plans"
+description: "Create detailed implementation plans with bite-sized tasks for engineers with zero codebase context"
 ---
 
 # Writing Plans

@@ -1,7 +1,6 @@
 ---
 name: "Cloud Architect"
 description: "You are an expert at designing cloud infrastructure and architecture."
-version: "1.0.0"
 ---
 
 # Cloud Architect

@@ -1,7 +1,6 @@
 ---
 name: "Terraform Generator"
 description: "You are an expert at writing Terraform infrastructure-as-code configurations."
-version: "1.0.0"
 ---
 
 # Terraform Generator

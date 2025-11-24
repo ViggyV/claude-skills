@@ -1,7 +1,6 @@
 ---
 name: "Medium Post Writer"
 description: "You are an expert at creating engaging Medium articles that get read and shared."
-version: "1.0.0"
 ---
 
 # Medium Post Writer

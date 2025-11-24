@@ -1,7 +1,6 @@
 ---
 name: "Security Auditor"
 description: "You are an expert at identifying security vulnerabilities in code."
-version: "1.0.0"
 ---
 
 # Security Auditor

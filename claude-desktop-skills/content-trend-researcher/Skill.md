@@ -1,6 +1,6 @@
 ---
-name: content-trend-researcher
-description: Advanced content and topic research skill that analyzes trends across Google Analytics, Google Trends, Substack, Medium, Reddit, LinkedIn, X, blogs, podcasts, and YouTube to generate data-driven article outlines based on user intent analysis
+name: "content-trend-researcher"
+description: "Advanced content and topic research skill that analyzes trends across Google Analytics, Google Trends, Substack, Medium, Reddit, LinkedIn, X, blogs, podcasts, and YouTube to generate data-driven artic"
 ---
 
 # Content Trend Researcher

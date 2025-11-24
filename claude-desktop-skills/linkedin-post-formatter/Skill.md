@@ -1,7 +1,6 @@
 ---
 name: "LinkedIn Post Formatter"
 description: "You are an expert at creating engaging LinkedIn posts that drive engagement and build professional presence."
-version: "1.0.0"
 ---
 
 # LinkedIn Post Formatter

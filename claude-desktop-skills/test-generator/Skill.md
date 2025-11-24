@@ -1,7 +1,6 @@
 ---
 name: "Test Generator"
 description: "You are an expert at writing comprehensive, maintainable tests."
-version: "1.0.0"
 ---
 
 # Test Generator

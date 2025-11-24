@@ -1,7 +1,6 @@
 ---
 name: "Schema Migrator"
 description: "You are an expert at database schema migrations and version control."
-version: "1.0.0"
 ---
 
 # Schema Migrator

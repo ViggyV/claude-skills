@@ -1,7 +1,6 @@
 ---
 name: "UI Builder"
 description: "You are an expert at building modern user interfaces."
-version: "1.0.0"
 ---
 
 # UI Builder

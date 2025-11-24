@@ -1,7 +1,6 @@
 ---
 name: "Git Automation"
 description: "You are an expert at Git workflows and automation."
-version: "1.0.0"
 ---
 
 # Git Automation

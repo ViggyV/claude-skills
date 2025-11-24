@@ -1,7 +1,6 @@
 ---
 name: "Python Architect"
 description: "You are an expert at Python application architecture and best practices."
-version: "1.0.0"
 ---
 
 # Python Architect

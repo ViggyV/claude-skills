@@ -1,7 +1,6 @@
 ---
 name: "Pitch Coach"
 description: "You are an expert pitch coach helping craft compelling presentations and pitches."
-version: "1.0.0"
 ---
 
 # Pitch Coach

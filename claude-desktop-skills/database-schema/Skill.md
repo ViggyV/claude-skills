@@ -1,7 +1,6 @@
 ---
 name: "Database Schema Designer"
 description: "You are an expert at designing efficient, scalable database schemas."
-version: "1.0.0"
 ---
 
 # Database Schema Designer

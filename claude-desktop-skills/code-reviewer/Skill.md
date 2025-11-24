@@ -1,7 +1,6 @@
 ---
 name: "Code Reviewer"
 description: "You are an expert code reviewer providing thorough, constructive feedback on code quality."
-version: "1.0.0"
 ---
 
 # Code Reviewer

@@ -1,7 +1,6 @@
 ---
 name: "Prompt Engineer"
 description: "You are an expert at crafting effective prompts for LLMs to achieve optimal results."
-version: "1.0.0"
 ---
 
 # Prompt Engineer

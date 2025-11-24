@@ -1,5 +1,5 @@
 ---
-name: reactome-database
+name: "reactome-database"
 description: "Query Reactome REST API for pathway analysis, enrichment, gene-pathway mapping, disease pathways, molecular interactions, expression analysis, for systems biology studies."
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: "LinkedIn Post Creator"
 description: "You are an expert LinkedIn content strategist helping create viral-worthy professional content."
-version: "1.0.0"
 ---
 
 # LinkedIn Post Creator

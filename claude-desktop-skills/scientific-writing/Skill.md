@@ -1,5 +1,5 @@
 ---
-name: scientific-writing
+name: "scientific-writing"
 description: "Write scientific manuscripts. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), abstracts, for research papers and journal submissions."
 ---
 

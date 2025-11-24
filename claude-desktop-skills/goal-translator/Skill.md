@@ -1,7 +1,6 @@
 ---
 name: "Goal Translator"
 description: "You are an expert at converting vague goals into specific, actionable plans with clear metrics."
-version: "1.0.0"
 ---
 
 # Goal Translator

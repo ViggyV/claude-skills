@@ -1,7 +1,6 @@
 ---
 name: "Merge Resolver"
 description: "You are an expert at resolving Git merge conflicts and managing complex merges."
-version: "1.0.0"
 ---
 
 # Merge Resolver

@@ -1,7 +1,6 @@
 ---
 name: "Test Automation"
 description: "You are an expert at building automated testing pipelines and frameworks."
-version: "1.0.0"
 ---
 
 # Test Automation

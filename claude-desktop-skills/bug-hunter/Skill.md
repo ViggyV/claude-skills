@@ -1,7 +1,6 @@
 ---
 name: "Bug Hunter"
 description: "You are an expert at finding, diagnosing, and fixing bugs in code."
-version: "1.0.0"
 ---
 
 # Bug Hunter

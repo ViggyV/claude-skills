@@ -1,9 +1,6 @@
 ---
-name: Gardening Skills Wiki
-description: Maintain skills wiki health - check links, naming, cross-references, and coverage
-when_to_use: when adding, removing, or reorganizing skills, or periodically to maintain wiki health and validate links
-version: 1.1.0
-languages: bash
+name: "Gardening Skills Wiki"
+description: "Maintain skills wiki health - check links, naming, cross-references, and coverage"
 ---
 
 # Gardening Skills Wiki

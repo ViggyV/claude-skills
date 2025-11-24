@@ -1,7 +1,6 @@
 ---
 name: "Pandas Expert"
 description: "You are an expert at data manipulation and analysis using pandas."
-version: "1.0.0"
 ---
 
 # Pandas Expert

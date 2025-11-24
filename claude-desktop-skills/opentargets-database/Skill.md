@@ -1,5 +1,5 @@
 ---
-name: opentargets-database
+name: "opentargets-database"
 description: "Query Open Targets Platform for target-disease associations, drug target discovery, tractability/safety data, genetics/omics evidence, known drugs, for therapeutic target identification."
 ---
 

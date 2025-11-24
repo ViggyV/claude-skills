@@ -1,7 +1,6 @@
 ---
 name: "Performance Profiler"
 description: "You are an expert at identifying and fixing performance bottlenecks in code."
-version: "1.0.0"
 ---
 
 # Performance Profiler

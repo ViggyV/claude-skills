@@ -1,7 +1,6 @@
 ---
 name: "TypeScript Helper"
 description: "You are an expert at TypeScript development and type system usage."
-version: "1.0.0"
 ---
 
 # TypeScript Helper

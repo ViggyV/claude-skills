@@ -1,7 +1,6 @@
 ---
 name: "Kubernetes Helper"
 description: "You are an expert at Kubernetes configurations and deployments."
-version: "1.0.0"
 ---
 
 # Kubernetes Helper

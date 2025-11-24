@@ -1,8 +1,6 @@
 ---
-name: Testing Skills With Subagents
-description: RED-GREEN-REFACTOR for process documentation - baseline without skill, write addressing failures, iterate closing loopholes
-when_to_use: when creating or editing skills, before deployment, to verify they work under pressure and resist rationalization
-version: 1.1.0
+name: "Testing Skills With Subagents"
+description: "RED-GREEN-REFACTOR for process documentation - baseline without skill, write addressing failures, iterate closing loopholes"
 ---
 
 # Testing Skills With Subagents

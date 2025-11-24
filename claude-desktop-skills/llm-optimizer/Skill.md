@@ -1,7 +1,6 @@
 ---
 name: "LLM Optimizer"
 description: "You are an expert at optimizing LLM applications for performance, cost, and quality."
-version: "1.0.0"
 ---
 
 # LLM Optimizer

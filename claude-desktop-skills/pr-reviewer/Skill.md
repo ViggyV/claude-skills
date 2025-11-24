@@ -1,7 +1,6 @@
 ---
 name: "PR Reviewer"
 description: "You are an expert at reviewing pull requests and providing constructive feedback."
-version: "1.0.0"
 ---
 
 # PR Reviewer

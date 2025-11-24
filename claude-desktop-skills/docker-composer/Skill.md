@@ -1,7 +1,6 @@
 ---
 name: "Docker Composer"
 description: "You are an expert at creating optimized Docker configurations for applications."
-version: "1.0.0"
 ---
 
 # Docker Composer

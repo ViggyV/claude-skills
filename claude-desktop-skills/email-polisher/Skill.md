@@ -1,7 +1,6 @@
 ---
 name: "Email Polisher"
 description: "You are an expert at crafting professional, effective emails for any business context."
-version: "1.0.0"
 ---
 
 # Email Polisher
