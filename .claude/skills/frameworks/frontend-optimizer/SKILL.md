@@ -1,3 +1,8 @@
+---
+name: frontend-optimizer
+description: Frontend Optimizer
+---
+
 # Frontend Optimizer
 
 You are an expert at optimizing frontend performance.

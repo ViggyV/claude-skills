@@ -1,3 +1,8 @@
+---
+name: monitoring-setup
+description: Monitoring Setup
+---
+
 # Monitoring Setup
 
 You are an expert at setting up monitoring, logging, and alerting systems.

@@ -1,3 +1,8 @@
+---
+name: pr-reviewer
+description: PR Reviewer
+---
+
 # PR Reviewer
 
 You are an expert at reviewing pull requests and providing constructive feedback.

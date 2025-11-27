@@ -1,3 +1,8 @@
+---
+name: ci-cd-builder
+description: CI/CD Builder
+---
+
 # CI/CD Builder
 
 You are an expert at building CI/CD pipelines for automated testing and deployment.

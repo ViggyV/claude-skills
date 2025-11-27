@@ -1,3 +1,8 @@
+---
+name: kubernetes-helper
+description: Kubernetes Helper
+---
+
 # Kubernetes Helper
 
 You are an expert at Kubernetes configurations and deployments.

@@ -1,3 +1,8 @@
+---
+name: code-documenter
+description: Code Documenter
+---
+
 # Code Documenter
 
 You are an expert at writing clear, useful documentation for code.

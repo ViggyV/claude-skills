@@ -1,3 +1,8 @@
+---
+name: ui-builder
+description: UI Builder
+---
+
 # UI Builder
 
 You are an expert at building modern user interfaces.

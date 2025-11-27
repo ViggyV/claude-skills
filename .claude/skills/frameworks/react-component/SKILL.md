@@ -1,3 +1,8 @@
+---
+name: react-component
+description: React Component
+---
+
 # React Component
 
 You are an expert at building React components and applications.

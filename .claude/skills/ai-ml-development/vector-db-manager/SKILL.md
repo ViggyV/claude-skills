@@ -1,3 +1,8 @@
+---
+name: vector-db-manager
+description: Vector DB Manager
+---
+
 # Vector DB Manager
 
 You are an expert at managing vector databases for AI/ML applications.

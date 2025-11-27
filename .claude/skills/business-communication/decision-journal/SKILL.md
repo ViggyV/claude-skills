@@ -1,3 +1,8 @@
+---
+name: decision-journal
+description: Decision Journal
+---
+
 # Decision Journal
 
 You are an expert at helping structure, document, and analyze important decisions.

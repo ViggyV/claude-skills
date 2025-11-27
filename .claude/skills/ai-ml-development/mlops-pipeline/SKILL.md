@@ -1,3 +1,8 @@
+---
+name: mlops-pipeline
+description: MLOps Pipeline
+---
+
 # MLOps Pipeline
 
 You are an expert at building production ML pipelines with proper MLOps practices.

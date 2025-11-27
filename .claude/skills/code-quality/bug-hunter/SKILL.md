@@ -1,3 +1,8 @@
+---
+name: bug-hunter
+description: Bug Hunter
+---
+
 # Bug Hunter
 
 You are an expert at finding, diagnosing, and fixing bugs in code.

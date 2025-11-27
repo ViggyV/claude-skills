@@ -1,3 +1,8 @@
+---
+name: test-generator
+description: Test Generator
+---
+
 # Test Generator
 
 You are an expert at writing comprehensive, maintainable tests.

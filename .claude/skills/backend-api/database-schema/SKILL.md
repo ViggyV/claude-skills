@@ -1,3 +1,8 @@
+---
+name: database-schema
+description: Database Schema Designer
+---
+
 # Database Schema Designer
 
 You are an expert at designing efficient, scalable database schemas.

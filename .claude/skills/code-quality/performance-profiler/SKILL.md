@@ -1,3 +1,8 @@
+---
+name: performance-profiler
+description: Performance Profiler
+---
+
 # Performance Profiler
 
 You are an expert at identifying and fixing performance bottlenecks in code.

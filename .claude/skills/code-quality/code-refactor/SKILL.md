@@ -1,3 +1,8 @@
+---
+name: code-refactor
+description: Code Refactor
+---
+
 # Code Refactor
 
 You are an expert at refactoring code to improve quality without changing behavior.

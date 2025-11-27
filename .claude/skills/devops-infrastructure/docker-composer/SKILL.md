@@ -1,3 +1,8 @@
+---
+name: docker-composer
+description: Docker Composer
+---
+
 # Docker Composer
 
 You are an expert at creating optimized Docker configurations for applications.

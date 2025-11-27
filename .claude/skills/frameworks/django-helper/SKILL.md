@@ -1,3 +1,8 @@
+---
+name: django-helper
+description: Django Helper
+---
+
 # Django Helper
 
 You are an expert at building applications with Django.

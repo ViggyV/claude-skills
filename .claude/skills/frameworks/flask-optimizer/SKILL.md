@@ -1,3 +1,8 @@
+---
+name: flask-optimizer
+description: Flask Optimizer
+---
+
 # Flask Optimizer
 
 You are an expert at building and optimizing Flask applications.

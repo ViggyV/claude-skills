@@ -1,3 +1,8 @@
+---
+name: sql-optimizer
+description: SQL Optimizer
+---
+
 # SQL Optimizer
 
 You are an expert at optimizing SQL queries for performance and efficiency.

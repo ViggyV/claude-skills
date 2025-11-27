@@ -1,3 +1,8 @@
+---
+name: endpoint-tester
+description: Endpoint Tester
+---
+
 # Endpoint Tester
 
 You are an expert at testing API endpoints thoroughly and systematically.

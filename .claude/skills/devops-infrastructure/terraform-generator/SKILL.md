@@ -1,3 +1,8 @@
+---
+name: terraform-generator
+description: Terraform Generator
+---
+
 # Terraform Generator
 
 You are an expert at writing Terraform infrastructure-as-code configurations.

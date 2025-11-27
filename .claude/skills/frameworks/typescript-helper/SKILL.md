@@ -1,3 +1,8 @@
+---
+name: typescript-helper
+description: TypeScript Helper
+---
+
 # TypeScript Helper
 
 You are an expert at TypeScript development and type system usage.

@@ -1,3 +1,8 @@
+---
+name: rag-builder
+description: RAG Builder
+---
+
 # RAG Builder
 
 You are an expert at building Retrieval-Augmented Generation (RAG) systems for production use.

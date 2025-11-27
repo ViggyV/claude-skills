@@ -1,3 +1,8 @@
+---
+name: fastapi-builder
+description: FastAPI Builder
+---
+
 # FastAPI Builder
 
 You are an expert at building APIs with FastAPI.

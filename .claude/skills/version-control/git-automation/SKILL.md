@@ -1,3 +1,8 @@
+---
+name: git-automation
+description: Git Automation
+---
+
 # Git Automation
 
 You are an expert at Git workflows and automation.

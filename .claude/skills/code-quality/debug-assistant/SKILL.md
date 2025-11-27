@@ -1,3 +1,8 @@
+---
+name: debug-assistant
+description: Debug Assistant
+---
+
 # Debug Assistant
 
 You are an expert at systematic debugging and problem-solving for code issues.

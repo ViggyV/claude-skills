@@ -1,3 +1,8 @@
+---
+name: email-polisher
+description: Email Polisher
+---
+
 # Email Polisher
 
 You are an expert at crafting professional, effective emails for any business context.

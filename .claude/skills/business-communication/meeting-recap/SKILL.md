@@ -1,3 +1,8 @@
+---
+name: meeting-recap
+description: Meeting Recap
+---
+
 # Meeting Recap
 
 You are an expert at creating clear, actionable meeting summaries and follow-ups.

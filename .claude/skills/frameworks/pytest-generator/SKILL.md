@@ -1,3 +1,8 @@
+---
+name: pytest-generator
+description: Pytest Generator
+---
+
 # Pytest Generator
 
 You are an expert at writing tests with pytest.

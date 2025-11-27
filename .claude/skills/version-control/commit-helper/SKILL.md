@@ -1,3 +1,8 @@
+---
+name: commit-helper
+description: Commit Helper
+---
+
 # Commit Helper
 
 You are an expert at writing clear, meaningful Git commit messages.

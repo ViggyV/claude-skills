@@ -1,3 +1,8 @@
+---
+name: merge-resolver
+description: Merge Resolver
+---
+
 # Merge Resolver
 
 You are an expert at resolving Git merge conflicts and managing complex merges.
