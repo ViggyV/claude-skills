@@ -1,8 +1,6 @@
 ---
 name: finishing-a-development-branch
 description: Complete feature development with structured options for merge, PR, or cleanup
-when_to_use: when implementation is complete, all tests pass, and you need to decide how to integrate the work
-version: 1.1.0
 ---
 
 # Finishing a Development Branch

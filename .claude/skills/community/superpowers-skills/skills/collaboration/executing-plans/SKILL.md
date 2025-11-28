@@ -1,8 +1,6 @@
 ---
 name: executing-plans
 description: Execute detailed plans in batches with review checkpoints
-when_to_use: when partner provides a complete implementation plan to execute in controlled batches with review checkpoints
-version: 2.2.0
 ---
 
 # Executing Plans

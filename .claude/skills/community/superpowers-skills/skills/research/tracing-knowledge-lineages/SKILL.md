@@ -1,8 +1,6 @@
 ---
 name: tracing-knowledge-lineages
 description: Understand how ideas evolved over time to find old solutions for new problems and avoid repeating past failures
-when_to_use: when questioning "why do we use X", before abandoning approaches, or evaluating "new" ideas that might be revivals
-version: 1.1.0
 ---
 
 # Tracing Knowledge Lineages
