@@ -202,3 +202,16 @@ These agents orchestrate existing skills — they don't duplicate them:
 - **Verification** uses `verification-before-completion` (evidence, not claims)
 - **Finish** uses `finishing-a-development-branch` (4 options: merge/PR/keep/discard)
 - **Parallel dispatch** follows `dispatching-parallel-agents` constraints (independent work only)
+
+---
+
+## Additional Documentation
+
+| Document | What It Covers |
+|----------|---------------|
+| [`GUIDE.md`](GUIDE.md) | Complete guide: architecture diagrams, all pipelines, JSON format tutorial, custom pipeline creation, troubleshooting |
+| [`agent-help/SKILL.md`](agent-help/SKILL.md) | Quick-reference skill — activated when users ask about agent commands |
+| [`pipeline-creator/SKILL.md`](pipeline-creator/SKILL.md) | Skill for creating custom pipelines step-by-step |
+| [`pipeline-orchestrator/references/pipeline-schema.md`](pipeline-orchestrator/references/pipeline-schema.md) | Full JSON schema specification |
+| [`pipeline-orchestrator/references/data-contracts.md`](pipeline-orchestrator/references/data-contracts.md) | How stages pass data via files on disk |
+| [`pipeline-orchestrator/references/skill-index.md`](pipeline-orchestrator/references/skill-index.md) | Every skill used across all 12 pipelines (38 unique skills) |
