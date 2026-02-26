@@ -1,0 +1,62 @@
+{
+  "name": "pitch-deck",
+  "description": "Build investor pitch with presentation and outreach email",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "offer",
+      "type": "skill",
+      "skill": "business-communication/alex-hormozi-pitch",
+      "description": "Design the offer using Hormozi's Grand Slam Offer framework",
+      "outputs": {
+        "offer_doc": "docs/pitch/{date}-{name}-offer.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Offer framework complete. Develop pitch narrative?"
+      }
+    },
+    {
+      "id": "pitch",
+      "type": "skill",
+      "skill": "business-communication/pitch-coach",
+      "description": "Develop pitch narrative, objection handling, and talking points",
+      "inputs": {
+        "offer_doc": "${offer.outputs.offer_doc}"
+      },
+      "outputs": {
+        "pitch_outline": "docs/pitch/{date}-{name}-pitch.md"
+      }
+    },
+    {
+      "id": "deck",
+      "type": "skill",
+      "skill": "anthropics-official/document-skills/pptx",
+      "description": "Create the pitch deck presentation",
+      "inputs": {
+        "offer_doc": "${offer.outputs.offer_doc}",
+        "pitch_outline": "${pitch.outputs.pitch_outline}"
+      },
+      "outputs": {
+        "pitch_deck": "output/{name}-pitch-deck.pptx"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Pitch deck created. Review before creating outreach email?"
+      }
+    },
+    {
+      "id": "email",
+      "type": "skill",
+      "skill": "business-communication/email-polisher",
+      "description": "Create investor outreach email with pitch deck attachment reference",
+      "inputs": {
+        "pitch_outline": "${pitch.outputs.pitch_outline}",
+        "pitch_deck": "${deck.outputs.pitch_deck}"
+      },
+      "outputs": {
+        "outreach_email": "docs/pitch/{date}-{name}-outreach.md"
+      }
+    }
+  ]
+}

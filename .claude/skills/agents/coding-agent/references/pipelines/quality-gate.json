@@ -1,0 +1,62 @@
+{
+  "name": "quality-gate",
+  "description": "Comprehensive code quality audit: review, bugs, security, tests, performance",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "code-review",
+      "type": "skill",
+      "skill": "code-quality/code-reviewer",
+      "description": "Review code for correctness, style, and maintainability",
+      "outputs": {
+        "review_report": "docs/reviews/{date}-{name}-code-review.md"
+      }
+    },
+    {
+      "id": "bug-hunt",
+      "type": "skill",
+      "skill": "code-quality/bug-hunter",
+      "description": "Hunt for bugs, edge cases, and logic errors",
+      "outputs": {
+        "bug_report": "docs/reviews/{date}-{name}-bugs.md"
+      }
+    },
+    {
+      "id": "security",
+      "type": "skill",
+      "skill": "code-quality/security-auditor",
+      "description": "Security audit for OWASP top 10 and common vulnerabilities",
+      "outputs": {
+        "security_report": "docs/reviews/{date}-{name}-security.md"
+      }
+    },
+    {
+      "id": "tests",
+      "type": "skill",
+      "skill": "code-quality/test-generator",
+      "description": "Generate tests for uncovered code paths",
+      "outputs": {
+        "test_files": "tests/"
+      }
+    },
+    {
+      "id": "performance",
+      "type": "skill",
+      "skill": "code-quality/performance-profiler",
+      "description": "Profile performance and identify bottlenecks",
+      "outputs": {
+        "perf_report": "docs/reviews/{date}-{name}-performance.md"
+      }
+    },
+    {
+      "id": "verify",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/verification-before-completion",
+      "description": "Run all tests and verify everything passes",
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify all tests pass and all issues are resolved"
+      }
+    }
+  ]
+}

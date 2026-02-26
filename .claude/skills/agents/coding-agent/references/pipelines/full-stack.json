@@ -1,0 +1,108 @@
+{
+  "name": "full-stack",
+  "description": "Full-stack development from idea to deployment",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "brainstorm",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/brainstorming",
+      "description": "Refine the idea into a fully-formed design through collaborative questioning",
+      "outputs": {
+        "design_doc": "docs/plans/{date}-{name}-design.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Design complete. Review before planning?"
+      }
+    },
+    {
+      "id": "plan",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/writing-plans",
+      "description": "Create detailed implementation plan with exact file paths and code examples",
+      "inputs": {
+        "design_doc": "${brainstorm.outputs.design_doc}"
+      },
+      "outputs": {
+        "plan_file": "docs/plans/{date}-{name}.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Plan ready. Review before building?"
+      }
+    },
+    {
+      "id": "build",
+      "type": "parallel",
+      "description": "Build backend, frontend, and infrastructure in parallel",
+      "branches": [
+        {
+          "id": "backend",
+          "type": "skill-chain",
+          "skills": [
+            "backend-api/api-designer",
+            "backend-api/database-schema",
+            "frameworks/fastapi-builder"
+          ],
+          "outputs": {
+            "backend_api": "src/api/",
+            "db_schema": "src/db/"
+          }
+        },
+        {
+          "id": "frontend",
+          "type": "skill-chain",
+          "skills": [
+            "frameworks/react-component",
+            "frameworks/ui-builder"
+          ],
+          "outputs": {
+            "frontend_app": "src/frontend/"
+          }
+        },
+        {
+          "id": "infra",
+          "type": "skill-chain",
+          "skills": [
+            "devops-infrastructure/docker-composer",
+            "devops-infrastructure/ci-cd-builder"
+          ],
+          "outputs": {
+            "dockerfile": "Dockerfile",
+            "ci_config": ".github/workflows/"
+          }
+        }
+      ],
+      "inputs": {
+        "plan_file": "${plan.outputs.plan_file}"
+      },
+      "gate": {
+        "type": "quality",
+        "prompt": "Running quality review on all built components..."
+      }
+    },
+    {
+      "id": "review",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/requesting-code-review",
+      "description": "Comprehensive code review of all changes against the plan",
+      "inputs": {
+        "plan_file": "${plan.outputs.plan_file}"
+      },
+      "outputs": {
+        "review_report": "docs/reviews/{date}-{name}-review.md"
+      }
+    },
+    {
+      "id": "finish",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/finishing-a-development-branch",
+      "description": "Present options: merge, PR, keep branch, or discard",
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify all tests pass before finishing"
+      }
+    }
+  ]
+}

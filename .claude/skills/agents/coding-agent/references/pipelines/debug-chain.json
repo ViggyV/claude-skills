@@ -1,0 +1,60 @@
+{
+  "name": "debug-chain",
+  "description": "Systematic debugging from symptoms to verified fix",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "debug",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/systematic-debugging",
+      "description": "Four-phase systematic debugging: investigate, analyze patterns, hypothesize, implement",
+      "outputs": {
+        "debug_log": "docs/debug/{date}-{name}-investigation.md"
+      }
+    },
+    {
+      "id": "root-cause",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/root-cause-tracing",
+      "description": "Trace the root cause through the dependency chain",
+      "inputs": {
+        "debug_log": "${debug.outputs.debug_log}"
+      },
+      "outputs": {
+        "root_cause": "docs/debug/{date}-{name}-root-cause.md"
+      }
+    },
+    {
+      "id": "fix",
+      "type": "skill",
+      "skill": "code-quality/bug-hunter",
+      "description": "Implement the fix based on root cause analysis",
+      "inputs": {
+        "root_cause": "${root-cause.outputs.root_cause}"
+      },
+      "gate": {
+        "type": "quality",
+        "prompt": "Review the fix for correctness and side effects"
+      }
+    },
+    {
+      "id": "test",
+      "type": "skill",
+      "skill": "code-quality/test-generator",
+      "description": "Write regression tests covering the bug and fix",
+      "outputs": {
+        "test_files": "tests/"
+      }
+    },
+    {
+      "id": "verify",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/verification-before-completion",
+      "description": "Run all tests and verify the fix resolves the original issue",
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify the original bug is fixed and no regressions introduced"
+      }
+    }
+  ]
+}

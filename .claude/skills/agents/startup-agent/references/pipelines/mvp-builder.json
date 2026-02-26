@@ -1,0 +1,111 @@
+{
+  "name": "mvp-builder",
+  "description": "Go from idea to deployed MVP with Hormozi-style offer design",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "brainstorm",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/brainstorming",
+      "description": "Refine the product idea through collaborative questioning",
+      "outputs": {
+        "design_doc": "docs/plans/{date}-{name}-design.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Product design complete. Create offer framework?"
+      }
+    },
+    {
+      "id": "offer",
+      "type": "skill",
+      "skill": "business-communication/alex-hormozi-pitch",
+      "description": "Design the offer using Hormozi's Value Equation framework",
+      "inputs": {
+        "design_doc": "${brainstorm.outputs.design_doc}"
+      },
+      "outputs": {
+        "offer_doc": "docs/plans/{date}-{name}-offer.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Offer designed. Proceed to implementation planning?"
+      }
+    },
+    {
+      "id": "plan",
+      "type": "skill",
+      "skill": "obra-superpowers/skills/writing-plans",
+      "description": "Create detailed implementation plan for the MVP",
+      "inputs": {
+        "design_doc": "${brainstorm.outputs.design_doc}",
+        "offer_doc": "${offer.outputs.offer_doc}"
+      },
+      "outputs": {
+        "plan_file": "docs/plans/{date}-{name}.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Plan ready. Start building?"
+      }
+    },
+    {
+      "id": "build",
+      "type": "parallel",
+      "description": "Build backend, frontend, and infrastructure in parallel",
+      "branches": [
+        {
+          "id": "backend",
+          "type": "skill-chain",
+          "skills": [
+            "backend-api/api-designer",
+            "backend-api/database-schema",
+            "frameworks/fastapi-builder"
+          ],
+          "outputs": {
+            "backend_api": "src/api/"
+          }
+        },
+        {
+          "id": "frontend",
+          "type": "skill-chain",
+          "skills": [
+            "frameworks/react-component",
+            "frameworks/ui-builder"
+          ],
+          "outputs": {
+            "frontend_app": "src/frontend/"
+          }
+        },
+        {
+          "id": "infra",
+          "type": "skill",
+          "skill": "devops-infrastructure/docker-composer",
+          "outputs": {
+            "dockerfile": "Dockerfile"
+          }
+        }
+      ],
+      "inputs": {
+        "plan_file": "${plan.outputs.plan_file}"
+      },
+      "gate": {
+        "type": "quality",
+        "prompt": "Running quality review on MVP..."
+      }
+    },
+    {
+      "id": "deploy",
+      "type": "skill",
+      "skill": "devops-infrastructure/ci-cd-builder",
+      "description": "Set up deployment pipeline for the MVP",
+      "outputs": {
+        "ci_config": ".github/workflows/"
+      },
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify deployment pipeline is configured correctly"
+      }
+    }
+  ]
+}

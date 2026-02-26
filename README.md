@@ -1,10 +1,11 @@
 # Claude Code Skills Library
 
-A comprehensive collection of **200+ skills** for Claude Code, combining official Anthropic skills, community contributions, and custom skills for enhanced AI-assisted development workflows.
+A comprehensive collection of **242 skills** for Claude Code, combining official Anthropic skills, community contributions, custom skills, and AI agent pipelines for enhanced AI-assisted development workflows.
 
-[![Skills](https://img.shields.io/badge/Skills-200+-brightgreen.svg)](#skill-catalog)
-[![Categories](https://img.shields.io/badge/Categories-15+-blue.svg)](#skill-categories)
-[![Stacks](https://img.shields.io/badge/Skill%20Stacks-22-orange.svg)](#skill-stacks)
+[![Skills](https://img.shields.io/badge/Skills-242-brightgreen.svg)](#skill-catalog)
+[![Categories](https://img.shields.io/badge/Categories-16-blue.svg)](#skill-categories)
+[![Stacks](https://img.shields.io/badge/Skill%20Stacks-25-orange.svg)](#skill-stacks)
+[![Agents](https://img.shields.io/badge/Agent%20Pipelines-12-purple.svg)](#agent-pipelines)
 
 ---
 
@@ -12,12 +13,15 @@ A comprehensive collection of **200+ skills** for Claude Code, combining officia
 
 - [Overview](#overview)
 - [Quick Start](#quick-start)
+- [Agent Pipelines](#agent-pipelines)
 - [Skill Sources](#skill-sources)
 - [Skill Catalog](#skill-catalog)
+  - [Agent Skills (4)](#agent-skills-4-skills)
   - [Custom Skills (62)](#custom-skills-62-skills)
   - [Anthropic Official (16)](#anthropic-official-skills-16-skills)
   - [obra/superpowers (20)](#obrasuperpowers-skills-20-skills)
-  - [Scientific Skills (120+)](#scientific-skills-120-skills)
+  - [Community/superpowers-skills (31)](#communitysuperpowers-skills-31-skills)
+  - [Scientific Skills (116)](#scientific-skills-116-skills)
   - [Community Skills](#community-skills)
 - [Skill Stacks](#skill-stacks)
 - [How to Use Skills](#how-to-use-skills)
@@ -33,11 +37,13 @@ This skill library aggregates the best Claude Code skills from multiple sources:
 
 | Source | Count | Description | Link |
 |--------|-------|-------------|------|
+| **Agent Pipelines** | 4 | Super-agents that chain skills into automated pipelines | [View](#agent-pipelines) |
 | **Custom Skills** | 62 | Custom-built skills across 8 categories | Local |
 | **Anthropic Official** | 16 | Official skills from Anthropic | [GitHub](https://github.com/anthropics/skills) |
 | **obra/superpowers** | 20 | Battle-tested development workflows | [GitHub](https://github.com/obra/superpowers) |
-| **Scientific Skills** | 120+ | Scientific computing & bioinformatics | [GitHub](https://github.com/K-Dense-AI/claude-scientific-skills) |
-| **Community** | 15+ | Individual community contributions | Various |
+| **Community/superpowers-skills** | 31 | Extended superpowers: problem-solving, research, architecture | [GitHub](https://github.com/obra/superpowers) |
+| **Scientific Skills** | 116 | Scientific computing & bioinformatics | [GitHub](https://github.com/K-Dense-AI/claude-scientific-skills) |
+| **Community** | 8 | Individual community contributions | Various |
 | **SkillsMP** | 15,000+ | Marketplace with thousands of skills | [skillsmp.com](https://skillsmp.com) |
 
 ---
@@ -71,6 +77,60 @@ cp -r claude-skills/.claude/skills ~/.claude/skills
 
 ---
 
+## Agent Pipelines
+
+Super-agents that chain multiple skills into automated, multi-stage pipelines. Say `/code full-stack` and watch it brainstorm, plan, build in parallel, review, and finish — automatically passing outputs between stages.
+
+### How It Works
+
+```
+User → Super-Agent (router) → Pipeline JSON → Pipeline Orchestrator → Skills
+```
+
+1. Super-agent presents pipeline options
+2. User selects → agent loads pipeline JSON
+3. Pipeline orchestrator executes stages (sequential, parallel, or chained)
+4. Gates pause for approval, run code review, or require verification
+5. Outputs pass between stages via files on disk
+
+### Coding Agent (`/code`)
+
+| Command | What It Does |
+|---------|-------------|
+| `/code full-stack` | brainstorm → plan → parallel(backend, frontend, infra) → code review → finish |
+| `/code quality` | code review → bug hunt → security audit → tests → performance → verify |
+| `/code prototype` | API design → database → FastAPI → React → Docker |
+| `/code debug` | systematic debugging → root cause → bug hunt → test → verify |
+
+### Docs Agent (`/docs`)
+
+| Command | What It Does |
+|---------|-------------|
+| `/docs api` | API documenter → code documenter → examples → OpenAPI spec |
+| `/docs project` | CLAUDE.md → ARCHITECTURE.md → DEVLOG.md → DOMAIN.md |
+| `/docs content` | research → parallel(Medium, LinkedIn, newsletter) → polish |
+| `/docs release` | PR review → commit analysis → changelog → release notes |
+
+### Startup Agent (`/startup`)
+
+| Command | What It Does |
+|---------|-------------|
+| `/startup mvp` | brainstorm → Hormozi pitch → plan → parallel build → deploy |
+| `/startup gtm` | research → pitch coaching → parallel(LinkedIn, Medium, newsletter, video) → email |
+| `/startup pitch` | Hormozi pitch → pitch coach → PPTX deck → outreach email |
+| `/startup analytics` | analytics spec → data pipeline → D3.js dashboards → PPTX report |
+
+### Pipeline Modes
+
+| Mode | Approval Gates | Quality Gates | Verification Gates |
+|------|---------------|---------------|-------------------|
+| **Interactive** (default) | Pause & ask user | Always run | Always run |
+| **Autonomous** | Skip | Always run | Always run |
+
+> See [`agents/README.md`](.claude/skills/agents/README.md) for full pipeline JSON schema, data contracts, and architecture details.
+
+---
+
 ## Skill Sources
 
 ### SkillsMP Marketplace
@@ -95,6 +155,21 @@ Featured skills include:
 ---
 
 ## Skill Catalog
+
+### Agent Skills (4 Skills)
+
+AI super-agents that orchestrate multi-skill pipelines. Located in `agents/`.
+
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| [`pipeline-orchestrator`](/.claude/skills/agents/pipeline-orchestrator/SKILL.md) | Core execution engine for multi-stage pipelines | Called by super-agents (not directly) |
+| [`coding-agent`](/.claude/skills/agents/coding-agent/SKILL.md) | Routes coding tasks to full-stack, quality, prototype, or debug pipelines | `/code` or `/code full-stack` |
+| [`docs-agent`](/.claude/skills/agents/docs-agent/SKILL.md) | Routes doc tasks to API docs, project docs, content, or release pipelines | `/docs` or `/docs api` |
+| [`startup-agent`](/.claude/skills/agents/startup-agent/SKILL.md) | Routes startup tasks to MVP, GTM, pitch deck, or analytics pipelines | `/startup` or `/startup mvp` |
+
+Each agent has 4 pipelines defined as JSON in `references/pipelines/`. See [Agent Pipelines](#agent-pipelines) for details.
+
+---
 
 ### Custom Skills (62 Skills)
 
@@ -297,7 +372,72 @@ Source: [github.com/obra/superpowers](https://github.com/obra/superpowers)
 
 ---
 
-### Scientific Skills (120+ Skills)
+### Community/superpowers-skills (31 Skills)
+
+Extended superpowers from `community/superpowers-skills/`. These add problem-solving frameworks, architecture patterns, research tools, and additional collaboration/debugging skills beyond the core obra set.
+
+#### Problem-Solving (6 skills)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `collision-zone-thinking` | Force unrelated concepts together to discover emergent properties | "What if we treated X like Y?" |
+| `inversion-exercise` | Flip core assumptions to reveal hidden constraints | "What if the opposite were true?" |
+| `meta-pattern-recognition` | Spot patterns appearing in 3+ domains | "Find universal principles" |
+| `scale-game` | Test at extremes (1000x bigger/smaller) to expose truths | "What happens at scale?" |
+| `simplification-cascades` | Find one insight that eliminates multiple components | "Simplify this system" |
+| `when-stuck-problem-solving-dispatch` | Routes to the right problem-solving technique | "I'm stuck, help me think" |
+
+#### Collaboration (11 skills)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `brainstorming-ideas-into-designs` | Interactive idea refinement using Socratic method | "Brainstorm this idea" |
+| `dispatching-parallel-agents` | Run multiple agents concurrently on independent problems | "Investigate in parallel" |
+| `executing-plans` | Execute plans in batches with review checkpoints | "Execute this plan" |
+| `finishing-a-development-branch` | Structured merge/PR/keep/discard workflow | "Finish this branch" |
+| `code-review-reception` | Receive review feedback with rigor, not agreement | "Handle review feedback" |
+| `remembering-conversations` | Search previous Claude conversations for context | "What did we discuss about X?" |
+| `requesting-code-review` | Dispatch code-reviewer subagent | "Review my code" |
+| `subagent-driven-development` | Dispatch subagent per task with quality gates | "Use subagent workflow" |
+| `using-git-worktrees` | Isolated git worktrees for parallel work | "Create worktree" |
+| `writing-plans` | Detailed implementation plans for zero-context engineers | "Write implementation plan" |
+| `getting-started-with-skills` | Skills wiki intro and mandatory workflows | "How do skills work?" |
+
+#### Debugging (4 skills)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `defense-in-depth-validation` | Validate at every layer data passes through | "Add validation layers" |
+| `root-cause-tracing` | Trace bugs backward through call stack | "Find root cause" |
+| `systematic-debugging` | Four-phase debugging: investigate, analyze, hypothesize, implement | "Debug systematically" |
+| `verification-before-completion` | Run verification commands before claiming success | "Verify this fix" |
+
+#### Testing (3 skills)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `condition-based-waiting` | Replace timeouts with condition polling | "Fix flaky async test" |
+| `test-driven-development` | RED-GREEN-REFACTOR cycle | "Use TDD" |
+| `testing-anti-patterns` | Never test mock behavior, never pollute production | "Review test quality" |
+
+#### Architecture (1 skill)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `preserving-productive-tensions` | Recognize when disagreements reveal valuable context | "Keep both approaches" |
+
+#### Research (1 skill)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `tracing-knowledge-lineages` | Understand how ideas evolved over time | "Trace this concept's history" |
+
+#### Meta (5 skills)
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `gardening-skills-wiki` | Maintain skills wiki health and cross-references | "Audit skills wiki" |
+| `pulling-updates-from-skills-repository` | Sync local skills with upstream | "Pull skill updates" |
+| `sharing-skills` | Contribute skills back via branch and PR | "Share my skill" |
+| `testing-skills-with-subagents` | RED-GREEN-REFACTOR for process docs | "Test my skill" |
+| `writing-skills` | TDD for process documentation | "Create a new skill" |
+
+---
+
+### Scientific Skills (116 Skills)
 
 Source: [github.com/K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)
 
@@ -361,39 +501,33 @@ https://mcp.k-dense.ai/claude-scientific-skills/mcp
 
 ---
 
-### Community Skills
+### Community Skills (8 Skills)
 
-#### Playwright Skill
-Browser automation with Playwright
-- Source: Community contribution
-- Usage: "Automate browser testing"
+Individual community contributions located in `community/`.
 
-#### D3.js Visualization
-Create D3.js charts and visualizations
-- Source: Community contribution
-- Usage: "Create D3 visualization"
-
-#### iOS Simulator Skill
-iOS app testing in simulator
-- Source: Community contribution
-- Usage: "Test iOS app"
-
-#### ffuf Web Fuzzing
-Security testing with ffuf (authorized use only)
-- Source: Community contribution
-- Usage: "Fuzz web endpoints"
-
-#### Web Asset Generator
-Generate web assets (icons, favicons)
-- Source: Community contribution
-- Usage: "Generate favicon set"
+| Skill | Description | Usage |
+|-------|-------------|-------|
+| `playwright-browser-automation` | Complete browser automation with Playwright — test pages, fill forms, take screenshots, validate UX | "Automate browser testing" |
+| `d3-viz` | Interactive data visualizations using D3.js — custom charts, graphs, network diagrams, geographic viz | "Create D3 visualization" |
+| `ios-simulator-skill` | 21 production-ready scripts for iOS app testing, building, and automation | "Test iOS app" |
+| `ffuf-web-fuzzing` | Expert guidance for ffuf web fuzzing during penetration testing (authorized use only) | "Fuzz web endpoints" |
+| `web-asset-generator` | Generate favicons, app icons (PWA), and social media meta images with proper HTML tags | "Generate favicon set" |
+| `using-tmux-for-interactive-commands` | Run interactive CLI tools (vim, git rebase -i, Python REPL) via tmux | "Run interactive command" |
 
 ---
 
 ## Skill Stacks
 
-Pre-configured skill combinations for common workflows:
+Pre-configured skill combinations for common workflows (25 stacks):
 
+#### Agent Pipeline Stacks
+| Stack | Skills Included | Use Case |
+|-------|-----------------|----------|
+| `coding-agent` | pipeline-orchestrator, coding-agent, brainstorming, writing-plans, code-review, verification | Automated coding pipelines (`/code`) |
+| `docs-agent` | pipeline-orchestrator, docs-agent, api-documenter, code-documenter, content skills | Automated documentation pipelines (`/docs`) |
+| `startup-agent` | pipeline-orchestrator, startup-agent, hormozi-pitch, pitch-coach, pptx | Automated startup pipelines (`/startup`) |
+
+#### Development Stacks
 | Stack | Skills Included | Use Case |
 |-------|-----------------|----------|
 | `full-stack-ai` | rag-builder, chatbot-creator, api-designer, react-component | AI-powered full-stack apps |
@@ -402,16 +536,37 @@ Pre-configured skill combinations for common workflows:
 | `backend-development` | api-designer, database-schema, sql-optimizer, test-generator | Backend services |
 | `frontend-development` | react-component, typescript-helper, frontend-optimizer, ui-builder | Frontend apps |
 | `devops-complete` | docker-composer, ci-cd-builder, terraform-generator, kubernetes-helper | DevOps infrastructure |
-| `data-pipeline` | data-pipeline, pandas-expert, data-validator, etl-optimizer | Data engineering |
+| `microservices` | microservices-architect, api-designer, docker, k8s, monitoring | Microservices architecture |
+| `chatbot-development` | chatbot-creator, agent-designer, prompt-engineer, rag-builder | AI chatbot development |
+
+#### Quality & Workflow Stacks
+| Stack | Skills Included | Use Case |
+|-------|-----------------|----------|
 | `code-quality` | code-reviewer, test-generator, security-auditor, performance-profiler | Code quality |
+| `code-review-workflow` | requesting-code-review, receiving-code-review, pr-reviewer | Code review process |
 | `superpowers-development` | systematic-debugging, test-driven-development, verification-before-completion | Advanced dev workflows |
+
+#### Data & Science Stacks
+| Stack | Skills Included | Use Case |
+|-------|-----------------|----------|
+| `data-pipeline` | data-pipeline, pandas-expert, data-validator, etl-optimizer | Data engineering |
 | `scientific-research` | biopython, scanpy, rdkit, pandas | Scientific computing |
 | `bioinformatics` | biopython, ensembl-database, clinvar-database, alphafold-database | Genomics analysis |
-| `document-processing` | docx, pdf, pptx, xlsx | Document manipulation |
-| `creative-design` | canvas-design, algorithmic-art, theme-factory | Visual design |
-| `mcp-development` | mcp-builder, skill-creator, api-designer | MCP servers |
+
+#### Content & Creative Stacks
+| Stack | Skills Included | Use Case |
+|-------|-----------------|----------|
 | `business-pitch` | pitch-coach, alex-hormozi-pitch, goal-translator | Business communication |
 | `content-creation` | linkedin-post, newsletter, medium-post, video-script | Content writing |
+| `document-processing` | docx, pdf, pptx, xlsx | Document manipulation |
+| `creative-design` | canvas-design, algorithmic-art, theme-factory | Visual design |
+
+#### Infrastructure & Security Stacks
+| Stack | Skills Included | Use Case |
+|-------|-----------------|----------|
+| `mcp-development` | mcp-builder, skill-creator, api-designer | MCP servers |
+| `web-automation` | playwright-skill, webapp-testing, ios-simulator-skill | Browser automation |
+| `security-testing` | ffuf-web-fuzzing, security-auditor, defense-in-depth | Security testing |
 
 ---
 
@@ -563,6 +718,11 @@ Expected deliverables
 
 ```
 .claude/skills/
+├── agents/                     # 4 agent pipeline skills (NEW)
+│   ├── pipeline-orchestrator/  #   Core execution engine
+│   ├── coding-agent/           #   /code pipelines (4 pipeline JSONs)
+│   ├── docs-agent/             #   /docs pipelines (4 pipeline JSONs)
+│   └── startup-agent/          #   /startup pipelines (4 pipeline JSONs)
 ├── ai-ml-development/          # 8 AI/ML skills
 ├── backend-api/                # 8 backend skills
 ├── business-communication/     # 13 business skills
@@ -574,15 +734,18 @@ Expected deliverables
 ├── anthropics-official/        # 16 official skills
 ├── obra-superpowers/           # 20 workflow skills
 ├── community/
-│   ├── scientific-skills/      # 120+ scientific skills
+│   ├── scientific-skills/      # 116 scientific skills
+│   ├── superpowers-skills/     # 31 extended superpowers
 │   ├── playwright-skill/       # Browser automation
 │   ├── d3js-visualization/     # D3.js charts
 │   ├── ios-simulator-skill/    # iOS testing
 │   ├── ffuf-web-fuzzing/       # Security testing
-│   ├── superpowers-skills/     # Additional superpowers
+│   ├── web-asset-generator/    # Web assets
 │   └── superpowers-lab/        # Experimental skills
 └── awesome-claude-skills/      # Community index
 ```
+
+**Total: 242 skills across 16 categories, organized into 25 skill stacks with 12 agent pipelines.**
 
 ---
 

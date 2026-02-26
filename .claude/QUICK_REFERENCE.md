@@ -236,6 +236,49 @@ security-testing: ffuf fuzzing + Security audit + Defense in depth
 
 ---
 
+## Agent Pipelines (Super-Agents)
+
+Super-agents chain multiple skills into automated pipelines. Each agent routes to a pipeline, and the `pipeline-orchestrator` executes stages sequentially or in parallel.
+
+### Coding Agent (`/code`)
+| Command | Pipeline | Stages |
+|---------|----------|--------|
+| `/code full-stack` | Full-stack build | brainstorm → plan → parallel(backend, frontend, infra) → review → finish |
+| `/code quality` | Quality gate | code-review → bug-hunt → security → tests → performance → verify |
+| `/code prototype` | Rapid prototype | api-design → database → FastAPI → React → Docker |
+| `/code debug` | Debug chain | systematic-debug → root-cause → bug-hunt → test → verify |
+
+### Docs Agent (`/docs`)
+| Command | Pipeline | Stages |
+|---------|----------|--------|
+| `/docs api` | API documentation | api-documenter → code-documenter → examples → OpenAPI |
+| `/docs project` | Project docs | CLAUDE.md → ARCHITECTURE.md → DEVLOG.md → DOMAIN.md |
+| `/docs content` | Content pipeline | research → parallel(Medium, LinkedIn, newsletter) → polish |
+| `/docs release` | Release docs | PR review → commits → changelog → release notes |
+
+### Startup Agent (`/startup`)
+| Command | Pipeline | Stages |
+|---------|----------|--------|
+| `/startup mvp` | MVP builder | brainstorm → Hormozi pitch → plan → parallel build → deploy |
+| `/startup gtm` | GTM launch | research → pitch → parallel(LinkedIn, Medium, newsletter, video) → email |
+| `/startup pitch` | Pitch deck | Hormozi pitch → pitch coach → PPTX → outreach email |
+| `/startup analytics` | Product analytics | analytics spec → data pipeline → D3.js dashboards → PPTX report |
+
+### Pipeline Modes
+- **Interactive** (default): Pauses at every gate for user approval
+- **Autonomous**: Skips approval gates, still enforces quality and verification gates
+
+### Pipeline Location
+```
+.claude/skills/agents/
+├── pipeline-orchestrator/   # Core execution engine
+├── coding-agent/            # /code pipelines
+├── docs-agent/              # /docs pipelines
+└── startup-agent/           # /startup pipelines
+```
+
+---
+
 ## Troubleshooting
 
 ### Skills Not Working?

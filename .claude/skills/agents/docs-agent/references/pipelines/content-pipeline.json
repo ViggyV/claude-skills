@@ -1,0 +1,64 @@
+{
+  "name": "content-pipeline",
+  "description": "Create multi-channel content from research: Medium, LinkedIn, newsletter",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "research",
+      "type": "skill",
+      "skill": "business-communication/content-trend-researcher",
+      "description": "Research the topic, identify trends, and gather key insights",
+      "outputs": {
+        "research_brief": "docs/content/{date}-{name}-research.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Research complete. Review insights before creating content?"
+      }
+    },
+    {
+      "id": "content",
+      "type": "parallel",
+      "description": "Create content for multiple channels simultaneously",
+      "branches": [
+        {
+          "id": "medium",
+          "type": "skill",
+          "skill": "business-communication/medium-post",
+          "outputs": {
+            "medium_post": "docs/content/{date}-{name}-medium.md"
+          }
+        },
+        {
+          "id": "linkedin",
+          "type": "skill",
+          "skill": "business-communication/linkedin-post-formatter",
+          "outputs": {
+            "linkedin_post": "docs/content/{date}-{name}-linkedin.md"
+          }
+        },
+        {
+          "id": "newsletter",
+          "type": "skill",
+          "skill": "business-communication/newsletter",
+          "outputs": {
+            "newsletter": "docs/content/{date}-{name}-newsletter.md"
+          }
+        }
+      ],
+      "inputs": {
+        "research_brief": "${research.outputs.research_brief}"
+      }
+    },
+    {
+      "id": "polish",
+      "type": "skill",
+      "skill": "business-communication/email-polisher",
+      "description": "Polish and cross-reference all content for consistency",
+      "gate": {
+        "type": "approval",
+        "prompt": "All content created. Review before finalizing?"
+      }
+    }
+  ]
+}

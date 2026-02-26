@@ -214,5 +214,41 @@
       "code-quality/security-auditor",
       "obra-superpowers/skills/defense-in-depth"
     ]
+  },
+  "coding-agent": {
+    "description": "AI coding agent — chains brainstorming, planning, building, and review into automated pipelines",
+    "skills": [
+      "agents/pipeline-orchestrator",
+      "agents/coding-agent",
+      "obra-superpowers/skills/brainstorming",
+      "obra-superpowers/skills/writing-plans",
+      "obra-superpowers/skills/requesting-code-review",
+      "obra-superpowers/skills/verification-before-completion",
+      "obra-superpowers/skills/finishing-a-development-branch"
+    ]
+  },
+  "docs-agent": {
+    "description": "AI docs agent — chains research, documentation, and content creation into automated pipelines",
+    "skills": [
+      "agents/pipeline-orchestrator",
+      "agents/docs-agent",
+      "backend-api/api-documenter",
+      "code-quality/code-documenter",
+      "business-communication/medium-post",
+      "business-communication/linkedin-post-formatter",
+      "business-communication/newsletter"
+    ]
+  },
+  "startup-agent": {
+    "description": "AI startup agent — chains ideation, offer design, building, and go-to-market into automated pipelines",
+    "skills": [
+      "agents/pipeline-orchestrator",
+      "agents/startup-agent",
+      "obra-superpowers/skills/brainstorming",
+      "business-communication/alex-hormozi-pitch",
+      "business-communication/pitch-coach",
+      "anthropics-official/document-skills/pptx",
+      "business-communication/email-polisher"
+    ]
   }
 }

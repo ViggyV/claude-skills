@@ -1,0 +1,91 @@
+{
+  "name": "gtm-launch",
+  "description": "Create multi-channel go-to-market content from a single brief",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "research",
+      "type": "skill",
+      "skill": "business-communication/content-trend-researcher",
+      "description": "Research market, competitors, and content angles",
+      "outputs": {
+        "research_brief": "docs/gtm/{date}-{name}-research.md"
+      }
+    },
+    {
+      "id": "pitch",
+      "type": "skill",
+      "skill": "business-communication/pitch-coach",
+      "description": "Develop core messaging and pitch angles",
+      "inputs": {
+        "research_brief": "${research.outputs.research_brief}"
+      },
+      "outputs": {
+        "pitch_guide": "docs/gtm/{date}-{name}-pitch.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Core messaging ready. Generate channel content?"
+      }
+    },
+    {
+      "id": "content",
+      "type": "parallel",
+      "description": "Create content for all launch channels simultaneously",
+      "branches": [
+        {
+          "id": "linkedin",
+          "type": "skill",
+          "skill": "business-communication/linkedin-post-formatter",
+          "outputs": {
+            "linkedin_posts": "docs/gtm/{date}-{name}-linkedin.md"
+          }
+        },
+        {
+          "id": "medium",
+          "type": "skill",
+          "skill": "business-communication/medium-post",
+          "outputs": {
+            "medium_article": "docs/gtm/{date}-{name}-medium.md"
+          }
+        },
+        {
+          "id": "newsletter",
+          "type": "skill",
+          "skill": "business-communication/newsletter",
+          "outputs": {
+            "newsletter": "docs/gtm/{date}-{name}-newsletter.md"
+          }
+        },
+        {
+          "id": "video",
+          "type": "skill",
+          "skill": "business-communication/video-script",
+          "outputs": {
+            "video_script": "docs/gtm/{date}-{name}-video.md"
+          }
+        }
+      ],
+      "inputs": {
+        "pitch_guide": "${pitch.outputs.pitch_guide}",
+        "research_brief": "${research.outputs.research_brief}"
+      }
+    },
+    {
+      "id": "email",
+      "type": "skill",
+      "skill": "business-communication/email-polisher",
+      "description": "Create launch announcement email and outreach templates",
+      "inputs": {
+        "pitch_guide": "${pitch.outputs.pitch_guide}"
+      },
+      "outputs": {
+        "launch_email": "docs/gtm/{date}-{name}-email.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "All GTM content ready. Review before finalizing?"
+      }
+    }
+  ]
+}

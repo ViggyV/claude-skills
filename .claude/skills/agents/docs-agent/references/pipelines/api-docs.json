@@ -1,0 +1,54 @@
+{
+  "name": "api-docs",
+  "description": "Generate comprehensive API documentation with OpenAPI spec",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "api-doc",
+      "type": "skill",
+      "skill": "backend-api/api-documenter",
+      "description": "Document all API endpoints with request/response schemas",
+      "outputs": {
+        "api_docs": "docs/api/{name}-reference.md"
+      }
+    },
+    {
+      "id": "code-doc",
+      "type": "skill",
+      "skill": "code-quality/code-documenter",
+      "description": "Add inline documentation to source code",
+      "outputs": {
+        "documented_code": "src/"
+      }
+    },
+    {
+      "id": "examples",
+      "type": "skill",
+      "skill": "backend-api/endpoint-tester",
+      "description": "Generate usage examples and test requests for each endpoint",
+      "inputs": {
+        "api_docs": "${api-doc.outputs.api_docs}"
+      },
+      "outputs": {
+        "examples_doc": "docs/api/{name}-examples.md"
+      }
+    },
+    {
+      "id": "openapi",
+      "type": "skill",
+      "skill": "backend-api/api-designer",
+      "description": "Generate OpenAPI/Swagger specification from documented endpoints",
+      "inputs": {
+        "api_docs": "${api-doc.outputs.api_docs}",
+        "examples_doc": "${examples.outputs.examples_doc}"
+      },
+      "outputs": {
+        "openapi_spec": "docs/api/{name}-openapi.yaml"
+      },
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify OpenAPI spec is valid and covers all documented endpoints"
+      }
+    }
+  ]
+}

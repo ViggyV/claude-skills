@@ -1,0 +1,54 @@
+{
+  "name": "release-docs",
+  "description": "Generate changelog and release notes from commits and PRs",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "pr-review",
+      "type": "skill",
+      "skill": "version-control/pr-reviewer",
+      "description": "Review all PRs and commits since last release",
+      "outputs": {
+        "pr_summary": "docs/releases/{date}-{name}-pr-summary.md"
+      }
+    },
+    {
+      "id": "commits",
+      "type": "skill",
+      "skill": "version-control/commit-helper",
+      "description": "Analyze commit history and categorize changes",
+      "outputs": {
+        "commit_analysis": "docs/releases/{date}-{name}-commits.md"
+      }
+    },
+    {
+      "id": "changelog",
+      "type": "skill",
+      "skill": "code-quality/code-documenter",
+      "description": "Generate structured CHANGELOG entry from PR and commit analysis",
+      "inputs": {
+        "pr_summary": "${pr-review.outputs.pr_summary}",
+        "commit_analysis": "${commits.outputs.commit_analysis}"
+      },
+      "outputs": {
+        "changelog": "CHANGELOG.md"
+      }
+    },
+    {
+      "id": "release-notes",
+      "type": "skill",
+      "skill": "business-communication/email-polisher",
+      "description": "Write user-facing release notes highlighting key changes and improvements",
+      "inputs": {
+        "changelog": "${changelog.outputs.changelog}"
+      },
+      "outputs": {
+        "release_notes": "docs/releases/{date}-{name}-release-notes.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "Release notes ready. Review before publishing?"
+      }
+    }
+  ]
+}

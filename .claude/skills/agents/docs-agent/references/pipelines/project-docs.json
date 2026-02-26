@@ -1,0 +1,51 @@
+{
+  "name": "project-docs",
+  "description": "Scaffold project documentation using g4-templates structure",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "claude-md",
+      "type": "skill",
+      "skill": "anthropics-official/skill-creator",
+      "description": "Create or update CLAUDE.md with project conventions and instructions",
+      "outputs": {
+        "claude_md": "CLAUDE.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "CLAUDE.md ready. Review before generating architecture docs?"
+      }
+    },
+    {
+      "id": "architecture",
+      "type": "skill",
+      "skill": "backend-api/api-designer",
+      "description": "Document system architecture, component relationships, and data flows",
+      "outputs": {
+        "architecture_doc": "ARCHITECTURE.md"
+      }
+    },
+    {
+      "id": "devlog",
+      "type": "skill",
+      "skill": "version-control/commit-helper",
+      "description": "Initialize DEVLOG.md with project timeline and key decisions",
+      "outputs": {
+        "devlog": "DEVLOG.md"
+      }
+    },
+    {
+      "id": "domain",
+      "type": "skill",
+      "skill": "code-quality/code-documenter",
+      "description": "Document domain concepts, glossary, and business rules in DOMAIN.md",
+      "outputs": {
+        "domain_doc": "DOMAIN.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "All project docs generated. Review the full documentation set?"
+      }
+    }
+  ]
+}

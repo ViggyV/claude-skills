@@ -1,0 +1,71 @@
+{
+  "name": "rapid-prototype",
+  "description": "Fast MVP from API design to containerized app",
+  "mode": "interactive",
+  "stages": [
+    {
+      "id": "api-design",
+      "type": "skill",
+      "skill": "backend-api/api-designer",
+      "description": "Design the API endpoints and data models",
+      "outputs": {
+        "api_spec": "docs/api/{name}-spec.md"
+      },
+      "gate": {
+        "type": "approval",
+        "prompt": "API design ready. Proceed to database?"
+      }
+    },
+    {
+      "id": "database",
+      "type": "skill",
+      "skill": "backend-api/database-schema",
+      "description": "Design database schema from API models",
+      "inputs": {
+        "api_spec": "${api-design.outputs.api_spec}"
+      },
+      "outputs": {
+        "db_schema": "src/db/schema.sql"
+      }
+    },
+    {
+      "id": "backend",
+      "type": "skill",
+      "skill": "frameworks/fastapi-builder",
+      "description": "Build FastAPI backend with endpoints and database integration",
+      "inputs": {
+        "api_spec": "${api-design.outputs.api_spec}",
+        "db_schema": "${database.outputs.db_schema}"
+      },
+      "outputs": {
+        "backend_app": "src/api/"
+      }
+    },
+    {
+      "id": "frontend",
+      "type": "skill",
+      "skill": "frameworks/react-component",
+      "description": "Build React frontend consuming the API",
+      "inputs": {
+        "api_spec": "${api-design.outputs.api_spec}"
+      },
+      "outputs": {
+        "frontend_app": "src/frontend/"
+      }
+    },
+    {
+      "id": "containerize",
+      "type": "skill",
+      "skill": "devops-infrastructure/docker-composer",
+      "description": "Create Dockerfile and docker-compose for the full stack",
+      "outputs": {
+        "dockerfile": "Dockerfile",
+        "compose": "docker-compose.yml"
+      },
+      "gate": {
+        "type": "verification",
+        "prompt": "Verify Docker build succeeds"
+      }
+    }
+  ]
+}
